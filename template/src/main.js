@@ -4,10 +4,9 @@
 // (also, loading Vue standalone this way breaks vueify, so don't do it)
 // This is done with the transform "aliasify". For the config, see package.json
 {{/if_eq}}
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import router from './router';
 
-new Vue({ // eslint-disable-line no-new
-  el: '#app',
-  render: (h) => h(App)
-})
+const App = Vue.extend({});
+
+router.start(App, '#app');
